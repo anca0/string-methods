@@ -55,3 +55,30 @@ function isPalindrome(inputString) {
 
 const testString2 = "hello world";
 console.log(isPalindrome(testString2)); // Should print false
+
+
+// Exercise 3, what if you need to reverse the order of the words from a sentence
+
+function reverseWords(sentence) {
+    reversedSentence = sentence.split(' ').reverse().join(' ');
+    return reversedSentence;
+// need to split considering between each word there will be a space
+}
+console.log(reverseWords('mere pere'))
+// if inputSentence = "mere pere", reversedSentence = "pere mere"
+
+// Exercise 4, count how many times a character appears in a string
+function countOccurrence(inputString, char){
+ 
+    let numberOfOccurrences = 0
+    const characters = inputString.split('');
+    for(let i=0; i< characters.length; i++){
+        if(characters[i] === char){
+            numberOfOccurrences++
+        }
+    }
+    return numberOfOccurrences
+}
+
+console.log(countOccurrence('anca','a'))
+// if you call inputSentence('anca', a) should return 2
