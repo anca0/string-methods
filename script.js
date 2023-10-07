@@ -1,3 +1,46 @@
+// basics, most common methods
+
+const string01 = "let's see the length of characters";
+const lengthOfString01 = string01.length;
+
+console.log(lengthOfString01)
+
+const string02 = "with this one we return the character at a specific index in the string"
+const someCharacterOfString02 = string02.charAt(2)
+
+console.log(someCharacterOfString02)
+
+const string03 = "with substring() we return a specific substring of the string, need to specify start and end indexes"
+const someSubstringOfString03 = string03.substring(22,30)
+
+console.log(someSubstringOfString03)
+
+const string04 = "with slice() you can return a portion of the string between some specified start and end"
+const sliceSomeOfString04 = string04.slice(27,48)
+console.log(sliceSomeOfString04)
+
+// const string05 = "with indexOf(substring) and 'lastIndexOf(substring)' you return the index of the first or last occurrence of that substring in the string"
+const string05 = "abcdefghijgadaddadgbb"
+const firstStringOfString05 = string05.indexOf('b')
+const lastStringOfString05 = string05.lastIndexOf('g');
+
+console.log(firstStringOfString05)
+console.log(lastStringOfString05)
+
+
+const string06 = "startsWith(addPrefix) and endsWith(addSuffix) - this checks if the string starts with some specified substring"
+const startWithYesTheString06 = string06.startsWith('yes')
+const endsWithNoTheString06 = string06.endsWith('no');
+
+// or to make it true use this
+const startWithSomeStringMakeItTrue = string06.startsWith('start')
+console.log(`This string really starts with that string: ${startWithSomeStringMakeItTrue}.
+And the other above don't!`)
+
+console.log(startWithYesTheString06)
+console.log(endsWithNoTheString06)
+
+
 // Exercise 1 for String Methods - Reversing a string
 
 export function reverseString(string) {
