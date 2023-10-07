@@ -1,6 +1,6 @@
 // Exercise 1 for String Methods - Reversing a string
 
-function reverseString(string) {
+export function reverseString(string) {
   let newString = string.split("").reverse().join("");
   return newString;
 }
@@ -23,7 +23,7 @@ console.log(reverseString("NUF si SJ gninraeL"));
 
 // Exercise 2 - Palindrome checks
 
-function palindrome(inputString) {
+export function palindrome(inputString) {
   let reversedString = inputString.split("").reverse().join("");
 
   if (inputString === reversedString) {
@@ -34,13 +34,13 @@ function palindrome(inputString) {
 }
 
 const myPassion = "racecar";
-console.log(palindrome(myPassion));
+palindrome(myPassion);
 
 // firstly I do the reversed string, how it should be and then in the if statement I compare the strings
 
 // an improvement for this exercise would be to remove non-alphanumeric chars and convert it to lowercase
 
-function isPalindrome(inputString) {
+export function isPalindrome(inputString) {
   const cleanString = inputString.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
   // Reverse the clean string
@@ -55,16 +55,16 @@ console.log(isPalindrome(testString2)); // Should print false
 
 // Exercise 3, what if you need to reverse the order of the words from a sentence
 
-function reverseWords(sentence) {
-  reversedSentence = sentence.split(" ").reverse().join(" ");
+export function reverseWords(sentence) {
+  const reversedSentence = sentence.split(" ").reverse().join(" ");
   return reversedSentence;
   // need to split considering between each word there will be a space
 }
-console.log(reverseWords("mere pere"));
+reverseWords("mere pere");
 // if inputSentence = "mere pere", reversedSentence = "pere mere"
 
 // Exercise 4, count how many times a character appears in a string
-function countOccurrence(inputString, char) {
+export function countOccurrence(inputString, char) {
   let numberOfOccurrences = 0; // keep track of how many times the specified char appears in the string
 
   const characters = inputString.split(""); // need to convert it in an array of chars so we can iterate afterwards through each char
@@ -79,34 +79,30 @@ function countOccurrence(inputString, char) {
   return numberOfOccurrences; // how many times was found?
 }
 
-console.log(countOccurrence("anca", "a"));
+countOccurrence("anca", "a");
 // if you call inputSentence('anca', a) should return 2
 
 // Exercise 5 - Truncate text - if the string exceeds the maxLength, truncate the string and add '...' at the end
 
-function truncateText(inputString, maxLength) {
-  if (inputString.length > maxLength) {   // we have the property of length on a string, we use it to compare with maxLength allowed
-    inputString = inputString.slice(0, maxLength);  // with slice() we can cut off the string from specific indexes
-    return `${inputString}...`;  // use object literal to retrieve the string if it exceeds 20 chars
+export function truncateText(inputString, maxLength) {
+  if (inputString.length > maxLength) {
+    // we have the property of length on a string, we use it to compare with maxLength allowed
+    inputString = inputString.slice(0, maxLength); // with slice() we can cut off the string from specific indexes
+    return `${inputString}...`; // use object literal to retrieve the string if it exceeds 20 chars
   } else {
     return inputString; // otherwise, return it as it is
   }
 }
 
-console.log(
-  truncateText(
-    "this is a long text with more than 20 characters"
-  ,20)
-);
+truncateText("this is a long text with more than 20 characters", 20);
 
+// Exercise 6 - check for substring
 
-// Exercise 5 - check for substring
-
-function containsSubstring(inputString, substring) {
-    if(inputString.includes(substring)){
-        return true;
-    } else{
-        return false;
-    }
+export function containsSubstring(inputString, substring) {
+  if (inputString.includes(substring)) {
+    return true;
+  } else {
+    return false;
+  }
 }
-console.log(containsSubstring('Hello Anca', "test"))
+containsSubstring("Hello Anca", "test");
