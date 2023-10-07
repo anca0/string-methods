@@ -5,8 +5,6 @@ export function reverseString(string) {
   return newString;
 }
 
-console.log(reverseString("NUF si SJ gninraeL"));
-
 /**
  * Explanation:
  *
@@ -51,7 +49,7 @@ export function isPalindrome(inputString) {
 }
 
 const testString2 = "hello world";
-console.log(isPalindrome(testString2)); // Should print false
+// console.log(isPalindrome(testString2)); // Should print false
 
 // Exercise 3, what if you need to reverse the order of the words from a sentence
 
@@ -79,7 +77,6 @@ export function countOccurrence(inputString, char) {
   return numberOfOccurrences; // how many times was found?
 }
 
-countOccurrence("anca", "a");
 // if you call inputSentence('anca', a) should return 2
 
 // Exercise 5 - Truncate text - if the string exceeds the maxLength, truncate the string and add '...' at the end
@@ -94,7 +91,6 @@ export function truncateText(inputString, maxLength) {
   }
 }
 
-truncateText("this is a long text with more than 20 characters", 20);
 
 // Exercise 6 - check for substring
 
@@ -105,4 +101,3 @@ export function containsSubstring(inputString, substring) {
     return false;
   }
 }
-containsSubstring("Hello Anca", "test");
