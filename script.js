@@ -3,46 +3,68 @@
 const string01 = "let's see the length of characters";
 const lengthOfString01 = string01.length;
 
-console.log(lengthOfString01)
+console.log(lengthOfString01);
 
-const string02 = "with this one we return the character at a specific index in the string"
-const someCharacterOfString02 = string02.charAt(2)
+const string02 =
+  "with this one we return the character at a specific index in the string";
+const someCharacterOfString02 = string02.charAt(2);
 
-console.log(someCharacterOfString02)
+console.log(someCharacterOfString02);
 
-const string03 = "with substring() we return a specific substring of the string, need to specify start and end indexes"
-const someSubstringOfString03 = string03.substring(22,30)
+const string03 =
+  "with substring() we return a specific substring of the string, need to specify start and end indexes";
+const someSubstringOfString03 = string03.substring(22, 30);
 
-console.log(someSubstringOfString03)
+console.log(someSubstringOfString03);
 
-const string04 = "with slice() you can return a portion of the string between some specified start and end"
-const sliceSomeOfString04 = string04.slice(27,48)
-console.log(sliceSomeOfString04)
+const string04 =
+  "with slice() you can return a portion of the string between some specified start and end";
+const sliceSomeOfString04 = string04.slice(27, 48);
+console.log(sliceSomeOfString04);
 
 // const string05 = "with indexOf(substring) and 'lastIndexOf(substring)' you return the index of the first or last occurrence of that substring in the string"
-const string05 = "abcdefghijgadaddadgbb"
-const firstStringOfString05 = string05.indexOf('b')
-const lastStringOfString05 = string05.lastIndexOf('g');
+const string05 = "abcdefghijgadaddadgbb";
+const firstStringOfString05 = string05.indexOf("b");
+const lastStringOfString05 = string05.lastIndexOf("g");
 
-console.log(firstStringOfString05)
-console.log(lastStringOfString05)
+console.log(firstStringOfString05);
+console.log(lastStringOfString05);
 
-
-const string06 = "startsWith(addPrefix) and endsWith(addSuffix) - this checks if the string starts with some specified substring"
-const startWithYesTheString06 = string06.startsWith('yes')
-const endsWithNoTheString06 = string06.endsWith('no');
+const string06 =
+  "startsWith(addPrefix) and endsWith(addSuffix) - this checks if the string starts with some specified substring";
+const startWithYesTheString06 = string06.startsWith("yes");
+const endsWithNoTheString06 = string06.endsWith("no");
 
 // or to make it true use this
-const startWithSomeStringMakeItTrue = string06.startsWith('start')
+const startWithSomeStringMakeItTrue = string06.startsWith("start");
 console.log(`This string really starts with that string: ${startWithSomeStringMakeItTrue}.
-And the other above don't!`)
+And the other above doesn't!`);
 
-console.log(startWithYesTheString06)
-console.log(endsWithNoTheString06)
+console.log(startWithYesTheString06);
+console.log(endsWithNoTheString06);
 
+const replaceSomeValueFromString =
+  "replace all occurrences(cutMe) of a substring with another string";
+const newStringWhereYouReplacedSomething = replaceSomeValueFromString.replace(
+  "(cutMe)",
+  ""
+);
+
+console.log(newStringWhereYouReplacedSomething);
+
+const string07 =
+  "         let's remove trailing whitespaces from a string, if they are at the beginning or at the and of it   ";
+const trimString07 = string07.trim();
+
+console.log(trimString07);
 
 // Exercise 1 for String Methods - Reversing a string
 
+const string08 =
+  "let's split a string into an ARRAY of substrings based on the separator you mention";
+const splittedString08 = string08.split(" ");
+
+console.log(splittedString08);
 export function reverseString(string) {
   let newString = string.split("").reverse().join("");
   return newString;
@@ -134,7 +156,6 @@ export function truncateText(inputString, maxLength) {
   }
 }
 
-
 // Exercise 6 - check for substring
 
 export function containsSubstring(inputString, substring) {
@@ -144,3 +165,25 @@ export function containsSubstring(inputString, substring) {
     return false;
   }
 }
+
+// Additional exercises
+
+function processName(namesList) {
+  let result = ""; // here we store the result
+  const namesArray = namesList.split(","); // split the list into an array
+
+  for (let i = 0; i < namesArray.length; i++) {
+    const trimmedName = namesArray[i].trim(); // trim any space within a name
+    const replacedName = trimmedName.replace("John", "Jane"); // replace a name in the TRIMMED result of names
+    if (i === 0) {
+      result += replacedName;
+    } else {
+      result += ", " + replacedName;
+    }
+  }
+  return result;
+}
+
+const inputNames = "   John,   Alice,  Bob,   John, Jane ";
+
+console.log(processName(inputNames));
